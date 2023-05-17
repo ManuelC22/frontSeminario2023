@@ -1,0 +1,40 @@
+.card {
+    display: grid;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: dimgray;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+  }
+  .name {
+    display: grid;
+    align-items: end;
+    font-family: sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: .75rem;
+  }
+.describe{
+    text-align: justify;
+    font-family: sans-serif;
+    color: #FFFFFF;
+}
+  .price {
+    display: grid;
+    align-items: end;
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+    padding: .75rem;
+  }
+  .price2 {
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+  }
+

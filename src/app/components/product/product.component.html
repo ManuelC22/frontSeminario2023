@@ -1,0 +1,27 @@
+<form>
+    <input type="text" [(ngModel)]="name" placeholder="nombre" name="name">
+    <br>
+    <input type="text" [(ngModel)]="description" placeholder="descripción" id="description" name="description">
+    <br>
+    <input *ngIf="state" type="number" [(ngModel)]="price" placeholder="precio"  id="price" name="price">
+    <label *ngIf="!state">{{price | currency}}</label>
+    <br>
+    <input type="checkbox" [(ngModel)]="state" name="state">
+    <br>
+
+    <select [(ngModel)]="idtegory" name="idtegory">
+        <option *ngFor="let category of categories;index as i;first as isFirst" value="{{category.id}}">{{category.name}}</option>
+    </select>
+
+    <button type="button" (click)="save()">Guardar</button>
+</form>
+
+<table>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>descripción</th>
+    <th>Precio</th>
+    <tr *ngFor="let product of products;index as i;first as isFirst">
+        <app-row [iden]="product.id" [name]="product.name"  [description]="'este es un cafe'"  [status]="'ok'" ></app-row>
+    </tr>
+</table>

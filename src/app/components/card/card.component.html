@@ -1,0 +1,34 @@
+
+<div *ngFor="let product of products; index as i; first as isFirst">    
+    <div class="card" *ngIf="product.stoc>0">
+        <div [ngSwitch]="typeTemplate">
+            <div *ngSwitchCase='"full"'>
+                <div class="name">{{product.name}}</div>
+                <div class="describe">{{product.describe}}</div>
+                <button class="primary-btn" type="button" >Agregar producto</button>
+            </div>
+            <div *ngSwitchCase='"simple"'>
+                <div>
+                <div class="name">{{product.name}} <span class="price2">{{product.price | currency:pais:moneda }}</span></div>
+                <button class="primary-btn" type="button" >Agregar producto</button>
+                </div>
+            </div>
+        </div>
+        <!--<ng-container *ngTemplateOutlet="simple"></ng-container>
+        <ng-container *ngTemplateOutlet="full"></ng-container>-->
+    </div>
+
+<ng-template #simple>
+    <div>
+    <div class="name">{{product.name}} <span class="price2">{{product.price | currency:pais:moneda }}</span></div>
+    <button class="primary-btn" type="button" >Agregar producto</button>
+    </div>
+</ng-template>
+
+<ng-template #full>
+    <div class="name">{{product.name}}</div>
+    <div class="describe">{{product.describe}}</div>
+    <button class="primary-btn" type="button" >Agregar producto</button>
+</ng-template>
+
+</div>
