@@ -1,0 +1,2 @@
+<button [ngStyle]="getStyle(index)" mat-button (click)="onClickBtn()" color="primary" *ngIf="element.state">{{label}}</button>
+<button [ngStyle]="getStyle(index)" mat-button (click)="onClickBtn()" color="primary" disabled *ngIf="!element.state">{{label}}</button>

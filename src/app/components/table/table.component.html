@@ -1,0 +1,9 @@
+<table>
+    <caption>{{title}}</caption>
+    <th *ngFor="let h of headers">{{h}}</th>
+    <tr *ngFor="let product of products;index as i;first as isFirst" [ngClass]="getStyle(i)">
+        <app-row [prod]="product" [rowIdex]="i" ></app-row>
+        <td><button (click)="ngAfterViewInit()">Ver Datos Celda</button></td>
+        <td><input type="checkbox" (change)="hello()" [(ngModel)]="ischeck" name="ischeck" id="ischeck"></td>
+    </tr>
+</table>

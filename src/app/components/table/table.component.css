@@ -1,0 +1,17 @@
+table{
+    padding: 5px;
+    margin: 40px;
+    border: 1px solid #000000;
+}
+
+.row0{
+    font-size: 15px;
+    color: white;
+    background-color: #ABB2B9
+}
+
+.row1{
+    font-size: 15px;
+    color: white;
+    background-color: #2C3E50
+}

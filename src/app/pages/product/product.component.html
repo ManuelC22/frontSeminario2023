@@ -1,4 +1,4 @@
-<form>
+<!--<form>
     <input type="text" [(ngModel)]="name" placeholder="nombre" name="name">
     <br>
     <input type="text" [(ngModel)]="description" placeholder="descripción" id="description" name="description">
@@ -14,14 +14,7 @@
     </select>
 
     <button type="button" (click)="save()">Guardar</button>
-</form>
+</form>-->
 
-<table>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>descripción</th>
-    <th>Precio</th>
-    <tr *ngFor="let product of products;index as i;first as isFirst">
-        <app-row [iden]="product.id" [name]="product.name"  [description]="'este es un cafe'"  [status]="'ok'" ></app-row>
-    </tr>
-</table>
+<app-table [list]="fullList" [title]="title1"></app-table>
+<app-table [list]="fullList2" [title]="title2"></app-table>

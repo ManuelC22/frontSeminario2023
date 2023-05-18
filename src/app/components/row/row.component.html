@@ -1,4 +1,7 @@
-<td>{{iden}}</td>
-<td>{{name}}</td>
-<td>{{description}}</td>
-<td>{{status}}</td>
+<td>{{prod.id}}</td>
+<td [ngStyle]="rowColor">{{prod.name}}</td>
+<td>{{prod.description}}</td>
+<td>{{prod.state}}</td>
+<td><app-button-cell [label]="'Editar'" [element]="prod" [index]="rowIdex" (eventClick)="onChildButtonClick($event)"></app-button-cell></td>
+<td><app-button-cell [label]="'Eliminar'" [element]="prod" [index]="rowIdex" (eventClick)="onChildButtonClick($event)"></app-button-cell></td>
+<td><button (click)="disableBtn(true)">Desabilitar</button></td>
