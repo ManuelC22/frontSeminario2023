@@ -1,34 +1,19 @@
-
-<div *ngFor="let product of products; index as i; first as isFirst">    
-    <div class="card" *ngIf="product.stoc>0">
-        <div [ngSwitch]="typeTemplate">
-            <div *ngSwitchCase='"full"'>
-                <div class="name">{{product.name}}</div>
-                <div class="describe">{{product.describe}}</div>
-                <button class="primary-btn" type="button" >Agregar producto</button>
-            </div>
-            <div *ngSwitchCase='"simple"'>
-                <div>
-                <div class="name">{{product.name}} <span class="price2">{{product.price | currency:pais:moneda }}</span></div>
-                <button class="primary-btn" type="button" >Agregar producto</button>
-                </div>
-            </div>
-        </div>
-        <!--<ng-container *ngTemplateOutlet="simple"></ng-container>
-        <ng-container *ngTemplateOutlet="full"></ng-container>-->
-    </div>
-
-<ng-template #simple>
-    <div>
-    <div class="name">{{product.name}} <span class="price2">{{product.price | currency:pais:moneda }}</span></div>
-    <button class="primary-btn" type="button" >Agregar producto</button>
-    </div>
-</ng-template>
-
-<ng-template #full>
-    <div class="name">{{product.name}}</div>
-    <div class="describe">{{product.describe}}</div>
-    <button class="primary-btn" type="button" >Agregar producto</button>
-</ng-template>
-
-</div>
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{product.name | uppercase}}</mat-card-title>
+      <mat-card-subtitle>{{product.code  }}</mat-card-subtitle>
+      <!--| numberAcount:' ':'#'-->
+      <mat-card-subtitle>{{product.price | currency:pais:moneda }}</mat-card-subtitle>
+    </mat-card-header>
+    <img appImageNotFound (mousePosition)="handleMousePosition($event)" defaultImage="../../../assets/imgDefault.jpg" mat-card-image src="https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2020/10/05/5f7b260277fed.r_d.1244-497-0.jpeg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab (click)="routerToAdd()" matTooltip="Primary" color="primary" title="Agregar">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-actions>
+    
+  </mat-card>

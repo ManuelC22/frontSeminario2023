@@ -1,8 +1,7 @@
-table{
-    padding: 5px;
-    margin: 40px;
-    border: 1px solid #000000;
-}
+table {
+    width: 100%;
+    padding: 10px 40px;
+  }
 
 .row0{
     font-size: 15px;
@@ -12,6 +11,6 @@ table{
 
 .row1{
     font-size: 15px;
-    color: white;
-    background-color: #2C3E50
+    color: black;
+    background-color: #FFFFFF
 }

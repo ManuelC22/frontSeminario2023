@@ -1,6 +1,10 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { List } from '../model/list';
-import { RowComponent } from '../row/row.component';
+import { Product } from '../model/product';
+import {MatDialog} from '@angular/material/dialog';
+import { SimpleDialogComponent } from '../simple-dialog/simple-dialog.component';
+import { CardComponent } from '../card/card.component';
+import { SimpleFormComponent } from '../simple-form/simple-form.component';
 
 @Component({
   selector: 'app-table',
@@ -8,33 +12,37 @@ import { RowComponent } from '../row/row.component';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  
+  headers: string[]=[];
+  products : Product[] = [];
 
-  constructor() { }
-
-  @ViewChild(RowComponent) RowComponent: RowComponent = new RowComponent();
+  
   @Input() list:List=new List();
   @Input() title:string="";
-  headers:any[]=[];
-  products:any[]=[];
-
+  primary:string="primary";
+  accent:string="accent";
   ischeck:boolean=false;
-
+  constructor(private dialog: MatDialog) {}
   ngAfterViewInit() {
-    console.log(this.RowComponent.msj);
+    //console.log(this.RowComponent.msj);
   }
 
-
-  hello(){
-    this.RowComponent.disableBtn(this.ischeck);
-  }
-  
-  
   ngOnInit(): void {
-
-    this.headers=this.list.titles;
-    this.products=this.list.products;
-
+    this.headers = this.list.titles;
+    this.products= this.list.products;
+    console.log(this.products);
   }
+
+  openDialogDelete(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(SimpleDialogComponent, {width: '250px'});
+  }
+
+  openDialogEdit(): void {
+    this.dialog.open(SimpleFormComponent, {width: '400px'});
+  }
+
+  
+
 
   getStyle(row:number){
     if((row%2)==0){

@@ -1,2 +1,3 @@
-<button [ngStyle]="getStyle(index)" mat-button (click)="onClickBtn()" color="primary" *ngIf="element.state">{{label}}</button>
-<button [ngStyle]="getStyle(index)" mat-button (click)="onClickBtn()" color="primary" disabled *ngIf="!element.state">{{label}}</button>
+<button mat-mini-fab matTooltip="Primary" (click)="onClickBtn()" color="{{typebtn}}" title="{{label}}">
+    <mat-icon>{{action}}</mat-icon>
+  </button>

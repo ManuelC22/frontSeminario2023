@@ -1,0 +1,25 @@
+<button mat-button [matMenuTriggerFor]="aboveMenu">Administrar</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <button mat-menu-item routerLink="/productos">Productos</button>
+  <button mat-menu-item routerLink="/productos/1234/manuel">Usarios</button>
+  <button mat-menu-item>Cateorias</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Catálogos</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item routerLink="/lista">Productos</button>
+  <button mat-menu-item>Categorias</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Registro de logs</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="afterMenu">Ayuda</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+  <button mat-menu-item>¿Como crear un producto?</button>
+  <button mat-menu-item>¿Como crear un catálogo?</button>
+</mat-menu>

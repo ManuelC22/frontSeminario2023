@@ -12,9 +12,25 @@
     <select [(ngModel)]="idtegory" name="idtegory">
         <option *ngFor="let category of categories;index as i;first as isFirst" value="{{category.id}}">{{category.name}}</option>
     </select>
-
-    <button type="button" (click)="save()">Guardar</button>
 </form>-->
-
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Administración de productos</mat-card-title>
+        <mat-card-subtitle>Agregar, Actualizar y Eliminar productos</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button (click)="openDialogNew()" mat-fab extended color="primary">
+            <mat-icon>add</mat-icon>
+            Agregar
+          </button>
+      </mat-card-actions>
+    <mat-card-content>
 <app-table [list]="fullList" [title]="title1"></app-table>
-<app-table [list]="fullList2" [title]="title2"></app-table>
+</mat-card-content>
+</mat-card>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="bold">Nuevo</mat-button-toggle>
+      <mat-button-toggle value="italic">Descagar</mat-button-toggle>
+      <mat-button-toggle value="underline">Importar</mat-button-toggle>
+    </mat-button-toggle-group>
+<router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 {
     "/api":{
-        "target":"https://young-sands-07814.herokuapp.com",
+        "target":"http://localhost:3000",
         "secure":false,
         "logLevel":"debug"
     }

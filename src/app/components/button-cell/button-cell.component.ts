@@ -10,8 +10,8 @@ export class ButtonCellComponent implements OnInit {
 
   constructor() { }
   @Input() label:string="";
-  @Input() index:number=0;
-  @Input() element:Product=new Product();
+  @Input() typebtn:string="primary";
+  @Input() action:string="delete";
   @Output() eventClick:EventEmitter<string> = new EventEmitter();
 
   styleLight = {
@@ -30,7 +30,7 @@ export class ButtonCellComponent implements OnInit {
   }
 
   onClickBtn(){
-    this.eventClick.emit(`${this.label} de la celda ${this.element.id}`);
+    this.eventClick.emit(`${this.label} de la celda`);
   }
 
   getStyle(row:number){

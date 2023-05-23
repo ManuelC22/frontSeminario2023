@@ -1,2 +1,56 @@
-<app-product></app-product>
-<!--<app-card></app-card>-->
+<mat-grid-list cols="3" rowHeight="100px">
+<mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#7b1fa2'">
+    <app-principal-menu></app-principal-menu>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#7b1fa2'">
+    <section>
+            <button routerLink="/" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+      </section>
+</mat-grid-tile>
+
+<mat-grid-tile [colspan]="3" [rowspan]="5" [style.background]="'#424242'">
+  <router-outlet></router-outlet>
+</mat-grid-tile>
+
+<mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#424242'">
+    <mat-list>
+        <mat-list-item>Item 1</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 2</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 3</mat-list-item>
+      </mat-list>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#424242'">
+    <mat-list>
+        <mat-list-item>Item 1</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 2</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 3</mat-list-item>
+      </mat-list>
+</mat-grid-tile>
+<mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#424242'">
+    <mat-list>
+        <mat-list-item>Item 1</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 2</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 3</mat-list-item>
+      </mat-list>
+</mat-grid-tile>
+  </mat-grid-list>

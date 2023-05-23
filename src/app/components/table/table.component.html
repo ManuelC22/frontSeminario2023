@@ -1,9 +1,51 @@
-<table>
-    <caption>{{title}}</caption>
-    <th *ngFor="let h of headers">{{h}}</th>
-    <tr *ngFor="let product of products;index as i;first as isFirst" [ngClass]="getStyle(i)">
-        <app-row [prod]="product" [rowIdex]="i" ></app-row>
-        <td><button (click)="ngAfterViewInit()">Ver Datos Celda</button></td>
-        <td><input type="checkbox" (change)="hello()" [(ngModel)]="ischeck" name="ischeck" id="ischeck"></td>
+<table class="striped">
+    <tr>
+      <th *ngFor="let h of headers">{{h}}</th>
     </tr>
+
+    <tr *ngFor="let product of products;index as i;first as isFirst">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price | currency}}</td>
+      <td>
+        <app-button-cell [label]="'Editar'" [typebtn]="primary" [action]="'edit'" (click)="openDialogEdit()"></app-button-cell>
+      </td>
+      <td>
+        <app-button-cell [label]="'Eliminar'" [typebtn]="accent" [action]="'delete'" (click)="openDialogDelete('0ms', '0ms')"></app-button-cell>
+      </td>
+      <td>
+        <mat-checkbox class="example-margin" [(ngModel)]="product.state">Activar</mat-checkbox>
+      </td>
+      </tr>
+
+    <!--<app-row  [ngClass]="getStyle(i)" [prod]="product" [rowIdex]="i" ></app-row>-->
+        <!--<td><button mat-button color="primary" (click)="ngAfterViewInit()">Ver Datos Celda</button></td>
+        td><input type="checkbox" (change)="hello()" [(ngModel)]="ischeck" name="ischeck" id="ischeck"></td>-->
 </table>
+
+<!--<table mat-table [dataSource]="products" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Identificación </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> descripción </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Precio </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="headers"></tr>
+    <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+  </table>-->
+  

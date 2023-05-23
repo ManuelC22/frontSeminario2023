@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Registro de producto</h1>
+<mat-form-field>
+  <mat-label>Nombre</mat-label>
+  <input [ngModel]="name" matInput>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Descripción</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Precio</mat-label>
+  <input matInput>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Categoria</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Guardar</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancelar</button>
+</div>

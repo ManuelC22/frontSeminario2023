@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../components/model/product';
 import { List } from '../components/model/list';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,45 +11,21 @@ import { List } from '../components/model/list';
 export class ProductsService {
 
   constructor(private http:HttpClient) { }
-  endpoint:string=`api/`;
+  endpoint:string="http://localhost:3000";
   operation="";
   nameS="ProductsService";
 
 
-  save(product:Product):boolean{
+  save(product:Product): Observable<any>{
 
-    this.http.post(`${this.endpoint}`,product).subscribe(data => {
-      console.log(data);
-      return true;
-    },error => {
-      console.log(error);
-      return false;
-    });
-    return false;
+    return this.http.post<any>(`${this.endpoint}/save`,product).pipe(
+      map(response => response)
+    );
   }
 
-  get(id:string):List{
-    let list = new List();
-    let aux:Product[]=[];
-    for(let j = 0; j<=10;j++){
-      list.titles=["Identificación","Nombre","descripción","Precio"];
-      let pro:Product= new Product();
-      pro.name="Teclado";
-      pro.description="sdfsdfsdfsdfsdfe";
-      pro.id="001";
-      pro.state=true;
-      pro.price=50000;
-  
-/*      let pro2:Product= new Product();
-      pro2.name="Pantalla";
-      pro2.description="sdfsdfsdfsdf";
-      pro2.id="323";
-      pro2.price=60000;*/
-  
-      aux[j]=pro;
-    }
-    list.products=aux;
-    return list;
+  get(index:number): Observable<any>{
+    return this.http.get<any>(`${this.endpoint}/list`).pipe(
+      map(response => response)
+    );
   }
-
 }
