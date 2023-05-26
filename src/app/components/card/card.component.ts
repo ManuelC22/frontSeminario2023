@@ -21,10 +21,14 @@ constructor(private service:ProductsService,private router: Router){
 
 }
 
+alerta(msj:string){
+  console.log(msj);
+}
+
   save(){
     this.service.save({id:'3332', name:'sdsdf', description:'dfgdg', price:9000,code:"000000"}).subscribe(data => {
       if(data.status==200){
-        alert("Resgisto Guardado con exito");
+        this.alerta("Resgisto Guardado con exito");
       }
     },error => {
       console.log(error.error.text);

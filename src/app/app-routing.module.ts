@@ -7,13 +7,13 @@ import { SimpleFormComponent } from '../app/components/simple-form/simple-form.c
 import { LoginGuard } from '../app/guards/login.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/lista', pathMatch: 'full' },
+ /* { path: '', redirectTo: '/lista', pathMatch: 'full' },
   { path: 'productos', component: ProductComponent,children:[
     { path: 'agregar', component: SimpleFormComponent },
     { path: 'listar', component: ListProductsComponent }
   ] },
   { path: 'lista', component: ListProductsComponent,canActivate: [LoginGuard] },
-  { path: 'error', component: ErrorComponent }
+  { path: 'error', component: ErrorComponent }*/
 ];
 
 @NgModule({

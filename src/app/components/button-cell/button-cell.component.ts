@@ -41,4 +41,15 @@ export class ButtonCellComponent implements OnInit {
     }
   }
 
+  addPositive(a:number,b:number){
+    if(a<0){
+      throw new Error('No se puede sumar un numero negativo');
+    }
+
+    if(b<0){
+      throw new Error('sumando 2 no puede ser negativo');
+    }
+    return a+b;
+  }
+
 }

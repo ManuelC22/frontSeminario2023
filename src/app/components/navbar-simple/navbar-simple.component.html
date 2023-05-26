@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <button mat-mini-fab matTooltip="Primary" (click)="cambiarHijos(true)" color="primary" title="Ver Hijos">
+        <mat-icon>done</mat-icon>
+      </button>
+      <button mat-mini-fab matTooltip="Primary" (click)="cambiarHijos(false)" color="warn" title="Esconder Hijos">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-button-toggle-group>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-button-toggle-group id="buttons" [hidden]="!edited" name="fontStyle" aria-label="Font Style">
+      <app-button-simple #primiero [typebtn]="'primary'" [label]="'Agregar'" [action]="'add'"></app-button-simple>
+      <app-button-simple #segundo [typebtn]="'accent'" [label]="'Borrar'" [action]="'delete'"></app-button-simple>
+      <app-button-simple #tercero [typebtn]="'warn'" [label]="'Editar'" [action]="'edit'"></app-button-simple>
+      <app-button-simple #cuarto [action]="'list'" [label]="'Listar'"></app-button-simple>
+    </mat-button-toggle-group>
+  </mat-card-content>
+</mat-card>

@@ -34,6 +34,8 @@ import { NumberAcountPipe } from './pipes/number-acount.pipe';
 import { ImageNotFoundDirective } from './directives/image-not-found.directive';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ErrorComponent } from './components/error/error.component';
+import { ButtonSimpleComponent } from './components/button-simple/button-simple.component';
+import { NavbarSimpleComponent } from './components/navbar-simple/navbar-simple.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { ErrorComponent } from './components/error/error.component';
     ProductPaginatorComponent,
     NumberAcountPipe,
     ImageNotFoundDirective,
-    ErrorComponent
+    ErrorComponent,
+    ButtonSimpleComponent,
+    NavbarSimpleComponent
   ],
   imports: [
     BrowserModule,
